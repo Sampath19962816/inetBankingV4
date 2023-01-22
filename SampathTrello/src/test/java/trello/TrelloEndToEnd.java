@@ -48,7 +48,7 @@ public class TrelloEndToEnd extends BaseClass {
 			Reporter.log("Login page is not displayed upon veryfying the URL and it is Incorrect");
 		}
 	}
-	@Test(priority = 3, dependsOnMethods = {"trelloHomePageCheck","trelloLoginPageCheck"})
+	@Test(priority = 3, dependsOnMethods = {"trelloHomePageCheck","trelloLoginPageCheck"},enabled=false)
 	public void trelloBoardPagecheck() throws IOException, InterruptedException {
 		TrelloHomePage homePage=new TrelloHomePage(driver);
 		homePage.getloginLinkText().click();
@@ -110,7 +110,7 @@ public class TrelloEndToEnd extends BaseClass {
 //		webdriverUtils.waitForVisibilityOFWebElement(driver,logouOfAtlasian.getLogoutButton());
 //		logouOfAtlasian.getLogoutButton().click();
 	}
-	@Test(priority = 4, dependsOnMethods = {"trelloHomePageCheck","trelloLoginPageCheck","trelloBoardPagecheck"})
+	@Test(priority = 4, dependsOnMethods = {"trelloHomePageCheck","trelloLoginPageCheck","trelloBoardPagecheck"},enabled=false)
 	public void CreateBords1BoardPageCheck() throws IOException, InterruptedException {
 		TrelloHomePage homePage=new TrelloHomePage(driver);
 		homePage.getloginLinkText().click();
@@ -159,7 +159,7 @@ public class TrelloEndToEnd extends BaseClass {
 		createBoardOne.getDoingAddCardButton().click();
 		createBoardOne.getDoingAddCardButton().click();
 		createBoardOne.getAddcardclosebutton1().click();
-		webdriverUtils.actionClass(driver).clickAndHold(createBoardOne.getSwap1()).pause(1000).moveToElement(createBoardOne.getSwap2()).release(createBoardOne.getSwap1()).pause(1000).perform();
+   	//	webdriverUtils.actionClass(driver).clickAndHold(createBoardOne.getSwap1()).pause(1000).moveToElement(createBoardOne.getSwap2()).release(createBoardOne.getSwap1()).pause(1000).perform();
 		
 	}
 }

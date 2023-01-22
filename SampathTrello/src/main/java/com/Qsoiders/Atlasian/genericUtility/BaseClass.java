@@ -18,6 +18,7 @@ public class BaseClass {
 	public FileUtility fileUtils=new FileUtility();
 	public ExcelUtility excelUtils=new ExcelUtility();
 	public WEbDriverUtility webdriverUtils=new WEbDriverUtility();
+	
 	@BeforeMethod 
 	public void configBeforeClass() throws IOException{
 		String browserName = fileUtils.readPropertyFileData("browser");
@@ -33,6 +34,7 @@ public class BaseClass {
 		driver.manage().window().maximize();
 		driver.get(fileUtils.readPropertyFileData("mainurl"));
 	}
+	
 	@AfterMethod
 	public void configAfterMethod(){
 		driver.manage().window().maximize();
